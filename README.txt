@@ -15,12 +15,13 @@ AFTERGAME
 3. Double-click build.cmd. It creates games.json and rebuilds site/.
    Open site\index.html to preview the list and its detail pages locally.
 
-GITHUB PAGES
+PUBLISH UPDATES
 
-Create a public GitHub repository and upload the contents of this folder.
-In repository Settings > Pages, choose GitHub Actions as the source.
-The included workflow builds and deploys the site whenever you push to main.
-The address is https://YOUR-USERNAME.github.io/REPOSITORY-NAME/.
+The public site is https://mofox314.github.io/aftergame/.
+After editing a game folder, double-click build.cmd to export games.json and
+preview the rebuilt site. Then open this project in GitHub Desktop, commit the
+changed files, and click Push origin. GitHub Actions builds and publishes the
+site automatically after the push.
 
-Your local build does not upload files. After editing, commit and push the
-changed game folders to GitHub to update the public site.
+The generated games.json and site/ are local outputs. GitHub Actions generates
+them again from the game folders, so they do not need to be committed.
