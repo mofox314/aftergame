@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An alphabetical collection of game ratings and reviews.">
+  <title>aftergame</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="data.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body data-page="list">
+  <main>
+    <header><a class="brand" href="index.html">aftergame</a></header>
+    <label class="search-label"><span class="sr-only">Search games</span><input id="search" type="search" placeholder="Search games" autocomplete="off"></label>
+    <div class="list-heading"><span>Game</span><span>Score</span></div>
+    <div id="games" aria-live="polite"></div>
+  </main>
+</body>
+</html>

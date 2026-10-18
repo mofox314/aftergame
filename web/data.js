@@ -1,0 +1,1 @@
+window.AFTERGAME_GAMES = [];
