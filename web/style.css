@@ -4,6 +4,7 @@ body{margin:0}
 main{width:min(820px,calc(100% - 32px));margin:28px auto 80px}
 .search-label{display:block;margin-bottom:24px}
 .search-label input{width:100%;height:42px;border:1px solid #aaa;border-radius:0;padding:0 12px;font:inherit;font-size:14px}
+.search-label input::-webkit-search-cancel-button{filter:grayscale(1);opacity:.7}
 .search-label input:focus-visible,.game-row:focus-visible,.back:focus-visible{outline:2px solid #333;outline-offset:2px}
 .game-row{display:grid;grid-template-columns:56px minmax(0,1fr) 70px;align-items:center;gap:14px;border-bottom:1px solid #ddd;padding:11px 8px;color:#111;text-decoration:none;font-size:15px}
 .game-row:hover{background:#f6f6f6}
