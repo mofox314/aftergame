@@ -11,14 +11,16 @@
       root.className = 'empty'; root.textContent = 'Game not found.'; return;
     }
     document.title = game.title + ' · aftergame';
-    const top = document.createElement('div'); top.className = 'detail-top';
-    const cover = document.createElement('img'); cover.className = 'detail-cover'; cover.src = game.image; cover.alt = game.title + ' cover';
-    const text = document.createElement('div');
+    const cover = document.createElement('img');
+    cover.className = 'detail-cover'; cover.src = game.image; cover.alt = game.title + ' cover';
+    const content = document.createElement('div'); content.className = 'detail-content';
+    const heading = document.createElement('div'); heading.className = 'detail-heading';
     const title = document.createElement('h1'); title.className = 'detail-title'; title.textContent = game.title;
-    const score = document.createElement('p'); score.className = 'detail-score'; score.textContent = 'Score: ' + game.score + '/10';
-    text.append(title, score); top.append(cover, text);
+    const score = document.createElement('p'); score.className = 'detail-score'; score.textContent = game.score + '/10';
+    heading.append(title, score);
     const description = document.createElement('p'); description.className = 'detail-description'; description.textContent = game.description;
-    root.append(top, description);
+    content.append(heading, description);
+    root.append(cover, content);
     return;
   }
 
@@ -34,11 +36,12 @@
       root.append(empty); return;
     }
     for (const game of visible) {
-      const row = document.createElement('a'); row.className = 'game-row'; row.href = 'game.html?id=' + encodeURIComponent(game.id);
-      const cover = document.createElement('img'); cover.className = 'game-thumb'; cover.src = game.image; cover.alt = '';
-      const title = document.createElement('span'); title.className = 'game-title'; title.textContent = game.title;
-      const score = document.createElement('span'); score.className = 'game-score'; score.textContent = game.score + '/10';
-      row.append(cover, title, score); root.append(row);
+      const card = document.createElement('a');
+      card.className = 'game-card'; card.href = 'game.html?id=' + encodeURIComponent(game.id);
+      card.setAttribute('aria-label', game.title);
+      const cover = document.createElement('img');
+      cover.className = 'game-thumb'; cover.src = game.image; cover.alt = ''; cover.loading = 'lazy';
+      card.append(cover); root.append(card);
     }
   }
   search.addEventListener('input', render);
